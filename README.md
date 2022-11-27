@@ -14,10 +14,11 @@ Using your already logged in Chrome profile, go to GOG and claim the latest give
 
 ##### Prerequisites
 
-Using selenium 4
+Using selenium 4 and web
 
 ```
-python -m pip install selenium 
+python -m pip install selenium
+python -m pip install webdriver-manager
 ```
 
 ### Execution 

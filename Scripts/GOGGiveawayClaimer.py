@@ -1,5 +1,3 @@
-# ansuter
-
 import os
 import time
 
@@ -9,7 +7,6 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 
-# pip install webdriver-manager
 print('Getting web driver')
 service = ChromeService(executable_path=ChromeDriverManager().install())
 
@@ -27,7 +24,7 @@ driver = webdriver.Chrome(service=service, options=chrome_options)
 driver.get('https://www.gog.com/#giveaway')
 driver.maximize_window()
 
-# prob doesn't handle non-giveaway periods well
+# Probably doesn't handle non-giveaway periods well
 print('Searching for giveaway')
 xpath = '//*[@id="giveaway"]/div[3]/div[2]/button/span[1]'
 success_xpath = '//*[@id="giveaway"]/div[4]/div/span[1]'
@@ -45,7 +42,7 @@ while giveaway_text != 'Add to library' and  success_text != 'Success!':
 
 # we broke out of loop but haven't downloaded
 if len(success_text) == 0:
-    print('Unclaimed giveaway. Clicking')
+    print('Unclaimed giveaway. Claiming.')
     giveaway_button.click()
     time.sleep(30)
 else:
