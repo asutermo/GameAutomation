@@ -13,3 +13,9 @@ Using selenium 4
 ```
 python -m pip install selenium 
 ```
+
+### Execution 
+
+```
+python gog.py
+```
