@@ -19,3 +19,7 @@ python -m pip install selenium
 ```
 python gog.py
 ```
+
+### Better Idea
+
+Add this as a scheduled task, and run once a day (or however often you want.)
