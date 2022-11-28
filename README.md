@@ -20,12 +20,11 @@ powershell.exe -File .\bootstrap.ps1 -ExecutionPolicy CurrentUser
 
 Using your already logged in Chrome profile, go to GOG and claim the latest giveaway. Not ultra tested but worked on a giveaway.
 
-### Execution 
-
 ```
 python GogGiveawayClaimer.py
 ```
 
 ### Follow-ups
 
-Automate adding this as a scheduled task.
+- Automate adding this as a scheduled task.
+- Share common script functionality
