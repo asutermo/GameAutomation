@@ -7,12 +7,18 @@ if (Test-Path $pyExe) {
     Invoke-WebRequest -Uri $url -OutFile $pyExe
 }
 
-Write-Host "Running installer"
-# https://docs.python.org/3.11/using/windows.html#installing-without-ui
-& $pyExe /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "Failed to install python"
-    exit(1)
+Write-Host "Testing version"
+$ver = & python --version
+if ($ver.StartsWith('Python 3.11')) {
+    Write-Host "Python already installed."
+} else {
+    Write-Host "Running installer"
+    # https://docs.python.org/3.11/using/windows.html#installing-without-ui
+    & $pyExe /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "Failed to install python"
+        exit(1)
+    }    
 }
 
 Write-Host "Installing required pip packages"
