@@ -2,9 +2,15 @@
 
 Simple and Hacky scripts to mess with/automate gaming.
 
+Note: Many of these methods should not be used in regular practice. Selenium, for example, is generally used for test automation and not actual user profiles.
+
 ## Prerequisites (Global)
 
-You will need python 3.7+ and Selenium. Anything > 3.7 is untested today but I'll handle it soon.
+To get started, run:
+
+```powershell
+powershell.exe -File .\bootstrap.ps1 -ExecutionPolicy CurrentUser
+```
 
 ### Scripts
 
