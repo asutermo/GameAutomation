@@ -1,7 +1,8 @@
 # Scripts
 
-Simple and Hacky scripts to mess with/automate gaming.
+Simple and Hacky scripts to mess with/automate gaming. 
 
+For giveaways, you must already be logged in.
 Note: Many of these methods should not be used in regular practice. Selenium, for example, is generally used for test automation and not actual user profiles.
 
 Also used xpaths may be frail.
@@ -15,6 +16,14 @@ powershell.exe -File .\bootstrap.ps1 -ExecutionPolicy CurrentUser
 ```
 
 ### Scripts
+
+#### Automate-Claimer.ps1
+
+This will automatically add this script to your Windows Scheduled Tasks to make sure you get the giveaways every day.
+
+```powershell
+powershell -File .\Automate-Claimer.ps1 -hour 3 -timeOfDay pm -scriptPath .\GameClaimerScripts\GOGGiveawayClaimer.py -ExecutionPolicy CurrentUser
+```
 
 #### GogGiveawayClaimer.py
 
