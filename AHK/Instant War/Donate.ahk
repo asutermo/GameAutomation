@@ -25,9 +25,9 @@ ActivateIW() {
 ImageSearchIW(bitmap, shades) {
     ImageSearch, alliance_x, alliance_y, 0, 0, A_ScreenWidth, A_ScreenHeight,*%shades% %bitmap%
     if (ErrorLevel = 2)
-        MsgBox Could not conduct the search.
+        OutputDebug, Could not conduct the search.
     else if (ErrorLevel = 1)
-        MsgBox Icon could not be found on the screen.
+        OutputDebug, Icon could not be found on the screen.
     Click %alliance_x%, %alliance_y%
     Sleep, 1000
 }
@@ -42,8 +42,16 @@ Winset, Alwaysontop, , A ; active window will be set as AlwaysOnTop
 ^z::
 bitmap := "alliance.bmp"
 ImageSearchIW(bitmap, 50)
-;bitmap := "hub.bmp"
-;ImageSearchIW(bitmap)
+
+; Hub image has two disparate appearances
+try {
+    bitmap := "hub.bmp"
+    ImageSearchIW(bitmap, 100)
+} catch e {
+    bitmap := "hubinactive.bmp"
+    ImageSearchIW(bitmap, 100)
+}
+
 bitmap := "technology.bmp"
 ImageSearchIW(bitmap, 50)
 bitmap := "research.bmp"
