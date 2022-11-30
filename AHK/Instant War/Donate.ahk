@@ -29,6 +29,7 @@ ImageSearchIW(bitmap) {
     else if (ErrorLevel = 1)
         MsgBox Icon could not be found on the screen.
     Click %alliance_x%, %alliance_y%
+    Sleep, 1000
 }
 
 ActivateIW()
