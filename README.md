@@ -19,7 +19,7 @@ powershell.exe -File .\bootstrap.ps1 -ExecutionPolicy CurrentUser
 
 #### Automate-Claimer.ps1
 
-This will automatically add this script to your Windows Scheduled Tasks to make sure you get the giveaways every day.
+This will automatically add this script to your Windows Scheduled Tasks to make sure you get the giveaways every day. Make sure to leave time between each giveaway runner.
 
 ```powershell
 powershell -File .\Automate-Claimer.ps1 -hour 3 -timeOfDay pm -scriptPath .\GameClaimerScripts\GOGGiveawayClaimer.py -ExecutionPolicy CurrentUser
