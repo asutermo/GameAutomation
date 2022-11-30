@@ -28,3 +28,4 @@ python GogGiveawayClaimer.py
 
 - Automate adding this as a scheduled task.
 - Share common script functionality
+- Check to ensure user logged in
