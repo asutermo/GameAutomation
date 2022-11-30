@@ -20,9 +20,10 @@ if (!(Test-Path $scriptPath)) {
     exit(1)
 }
 
-$taskAction = New-ScheduledTaskAction -Execute 'python' -Argument "$scriptPath"
+$fullScriptPath = Resolve-Path $scriptPath
+$taskAction = New-ScheduledTaskAction -Execute 'python' -Argument "$fullScriptPath"
 $taskTrigger = New-ScheduledTaskTrigger -Daily -At "$($hour)$($timeOfDay)"
 $task = New-ScheduledTask -Action $taskAction -Trigger $taskTrigger
 
-$taskName = Split-Path $scriptPath -Leaf
+$taskName = Split-Path $fullScriptPath -Leaf
 Register-ScheduledTask -TaskName "$taskName" -InputObject $task
