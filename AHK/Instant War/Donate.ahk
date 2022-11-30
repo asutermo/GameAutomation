@@ -22,8 +22,8 @@ ActivateIW() {
     }
 }
 
-ImageSearchIW(bitmap) {
-    ImageSearch, alliance_x, alliance_y, 0, 0, A_ScreenWidth, A_ScreenHeight,*50 %bitmap%
+ImageSearchIW(bitmap, shades) {
+    ImageSearch, alliance_x, alliance_y, 0, 0, A_ScreenWidth, A_ScreenHeight,*%shades% %bitmap%
     if (ErrorLevel = 2)
         MsgBox Could not conduct the search.
     else if (ErrorLevel = 1)
@@ -40,42 +40,13 @@ WinMove, 0, 0
 Winset, Alwaysontop, , A ; active window will be set as AlwaysOnTop
 
 ^z::
-;bitmap := "alliance.bmp"
+bitmap := "alliance.bmp"
+ImageSearchIW(bitmap, 50)
+;bitmap := "hub.bmp"
 ;ImageSearchIW(bitmap)
-
-; Search 'Alliance Icon'
-ImageSearch, alliance_x, alliance_y, 0, 0, A_ScreenWidth, A_ScreenHeight,*50 alliance.bmp 
-if (ErrorLevel = 2)
-    MsgBox Could not conduct the search.
-else if (ErrorLevel = 1)
-    MsgBox Icon could not be found on the screen.
-
-Click %alliance_x%, %alliance_y%
-
-; Search 'Technology'
-Sleep, 1000
-ImageSearch, technology_x, technology_y, 0, 0, A_ScreenWidth, A_ScreenHeight,*50 technology.bmp 
-if (ErrorLevel = 2)
-    MsgBox Could not conduct the search.
-else if (ErrorLevel = 1)
-    MsgBox Icon could not be found on the screen.
-Click %technology_x%, %technology_y%
-
-; Search 'Priority Technology'
-Sleep, 1000
-ImageSearch, research_x, research_y, 0, 0, A_ScreenWidth, A_ScreenHeight,*50 research.bmp 
-if (ErrorLevel = 2)
-    MsgBox Could not conduct the search.
-else if (ErrorLevel = 1)
-    MsgBox Icon could not be found on the screen.
-Click %research_x%, %research_y%
-
-; Contribute, but make sure we don't contribute Gold
-Sleep, 1000
-ImageSearch, contribute_x, contribute_y, 0, 0, A_ScreenWidth, A_ScreenHeight,*25 contribute.bmp 
-if (ErrorLevel = 2)
-    MsgBox Could not conduct the search.
-else if (ErrorLevel = 1)
-    MsgBox Icon could not be found on the screen.
-Click %contribute_x%, %contribute_y%
-
+bitmap := "technology.bmp"
+ImageSearchIW(bitmap, 50)
+bitmap := "research.bmp"
+ImageSearchIW(bitmap, 50)
+bitmap := "contribute.bmp"
+ImageSearchIW(bitmap, 25)
