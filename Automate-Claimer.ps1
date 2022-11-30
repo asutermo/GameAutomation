@@ -15,7 +15,7 @@ param (
     [string]$scriptPath
 )
 
-if (!Test-Path $scriptPath) {
+if (!(Test-Path $scriptPath)) {
     Write-Host "Unable to find $scriptPath"
     exit(1)
 }
