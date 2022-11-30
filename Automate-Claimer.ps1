@@ -23,4 +23,6 @@ if (!(Test-Path $scriptPath)) {
 $taskAction = New-ScheduledTaskAction -Execute 'python' -Argument "$scriptPath"
 $taskTrigger = New-ScheduledTaskTrigger -Daily -At "$($hour)$($timeOfDay)"
 $task = New-ScheduledTask -Action $taskAction -Trigger $taskTrigger
-Register-ScheduledTask -TaskName "Run $scriptPath" -InputObject $task
+
+$taskName = Split-Path $scriptPath -Leaf
+Register-ScheduledTask -TaskName "$taskName" -InputObject $task
