@@ -25,9 +25,9 @@ ActivateIW() {
 ImageSearchIW(bitmap, shades) {
     ImageSearch, alliance_x, alliance_y, 0, 0, A_ScreenWidth, A_ScreenHeight,*%shades% %bitmap%
     if (ErrorLevel = 2)
-        OutputDebug, Could not conduct the search.
+        OutputDebug, Could not conduct the search for %bitmap%
     else if (ErrorLevel = 1)
-        OutputDebug, Icon could not be found on the screen.
+        OutputDebug, Icon could not be found on the screen for %bitmap%
     Click %alliance_x%, %alliance_y%
     Sleep, 1000
 }
