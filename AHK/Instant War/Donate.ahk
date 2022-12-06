@@ -1,5 +1,6 @@
 #NoEnv
 #SingleInstance, Force
+#MaxThreadsPerHotkey, 2
 SetBatchLines, -1
 SetWorkingDir, %A_ScriptDir%
 CoordMode, Mouse, Relative  ;sets coordinates based upon active window
@@ -39,22 +40,33 @@ SysGet, Monitor, MonitorPrimary
 WinMove, 0, 0
 Winset, Alwaysontop, , A ; active window will be set as AlwaysOnTop
 
-^z::
-bitmap := "alliance.bmp"
-ImageSearchIW(bitmap, 50)
+Donate() {
 
-; Hub image has two disparate appearances
-try {
-    bitmap := "hub.bmp"
-    ImageSearchIW(bitmap, 100)
-} catch e {
-    bitmap := "hubinactive.bmp"
-    ImageSearchIW(bitmap, 100)
+    bitmap := "alliance.bmp"
+    ImageSearchIW(bitmap, 50)
+
+    ; Hub image has two disparate appearances
+    try {
+        bitmap := "hub.bmp"
+        ImageSearchIW(bitmap, 100)
+    } catch e {
+        bitmap := "hubinactive.bmp"
+        ImageSearchIW(bitmap, 100)
+    }
+
+    bitmap := "technology.bmp"
+    ImageSearchIW(bitmap, 50)
+    bitmap := "research.bmp"
+    ImageSearchIW(bitmap, 50)
+    bitmap := "contribute.bmp"
+    ImageSearchIW(bitmap, 25)
 }
 
-bitmap := "technology.bmp"
-ImageSearchIW(bitmap, 50)
-bitmap := "research.bmp"
-ImageSearchIW(bitmap, 50)
-bitmap := "contribute.bmp"
-ImageSearchIW(bitmap, 25)
+^z::
+toggle := !toggle
+if (toggle) {
+    SetTimer, Donate, 60000
+} else {
+    SetTimer, Donate, Off
+}
+
