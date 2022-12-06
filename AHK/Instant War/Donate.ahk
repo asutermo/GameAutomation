@@ -65,7 +65,7 @@ Donate() {
 ^z::
 toggle := !toggle
 if (toggle) {
-    SetTimer, Donate, 60000
+    SetTimer, Donate, 3600000
 } else {
     SetTimer, Donate, Off
 }
