@@ -2,6 +2,7 @@ import os
 import time
 
 from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -34,12 +35,17 @@ success_text = ''
 
 # wait for page to populate properly. yay angular
 print('Waiting for page to populate')
-while giveaway_text != 'Add to library' and  success_text != 'Success!':
-    giveaway_button = driver.find_element('xpath', xpath)
-    success_text = driver.find_element('xpath', success_xpath).text
-    giveaway_text = giveaway_button.text
-    time.sleep(5)
-
+try: 
+    while giveaway_text != 'Add to library' and  success_text != 'Success!':
+        giveaway_button = driver.find_element('xpath', xpath)
+        success_text = driver.find_element('xpath', success_xpath).text
+        giveaway_text = giveaway_button.text
+        time.sleep(5)
+except NoSuchElementException as nse:
+    print(f'Unable to find giveaway button. Make sure you\'re logged in. Giveaways are not run all of the time either.')
+    driver.quit()
+    exit()
+    
 # we broke out of loop but haven't downloaded
 if len(success_text) == 0:
     print('Unclaimed giveaway. Claiming.')
