@@ -38,6 +38,10 @@ add_to_library_button.click()
 time.sleep(60)
 print('Placing Order')
 # todo: make more resilient
+iframe = driver.find_element('xpath', "//*[@id='webPurchaseContainer']/iframe")
+driver.switch_to.frame(iframe)
+time.sleep(30)
+
 place_button = driver.find_element('xpath', "//*[@id='purchase-app']/div/div/div/div[2]/div[2]/div/button")
 place_button.click()
 time.sleep(60)
