@@ -42,7 +42,9 @@ iframe = driver.find_element('xpath', "//*[@id='webPurchaseContainer']/iframe")
 driver.switch_to.frame(iframe)
 time.sleep(30)
 
+# # payment-btn payment-order-confirm__btn payment-btn--primary
 place_button = driver.find_element('xpath', "//*[@id='purchase-app']/div/div/div/div[2]/div[2]/div/button")
 place_button.click()
 time.sleep(60)
-#driver.quit()
+
+driver.quit()
