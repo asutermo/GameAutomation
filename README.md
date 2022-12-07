@@ -24,6 +24,16 @@ Using your already logged in Chrome profile, go to GOG and claim the latest give
 python GogGiveawayClaimer.py
 ```
 
+#### EpicGiveawayClaimer.py
+
+Using your already logged in Chrome profile, go to GOG and claim the latest giveaway. Not ultra tested but worked on a giveaway.
+
+
+<span style='color:red'>Please note running this script excessively will trigger captcha</span>
+```
+python EpicGiveawayClaimer.py
+```
+
 ### Follow-ups
 
 - Automate adding this as a scheduled task.

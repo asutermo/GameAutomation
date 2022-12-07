@@ -24,8 +24,6 @@ driver = webdriver.Chrome(service=service, options=chrome_options)
 driver.get('https://store.epicgames.com/en-US/free-games')
 driver.maximize_window()
 
-
-# Probably doesn't handle non-giveaway periods well
 print('Searching for giveaway')
 WebDriverWait(driver, timeout=30)
 first_button = driver.find_element('xpath', "//span[text()='Free Now']")
@@ -39,7 +37,8 @@ add_to_library_button.click()
 
 time.sleep(60)
 print('Placing Order')
-place_button = driver.find_element('xpath', "//button[@class='payment-btn payment-order-confirm__btn payment-btn--primary']")
+# todo: make more resilient
+place_button = driver.find_element('xpath', "//*[@id='purchase-app']/div/div/div/div[2]/div[2]/div/button")
 place_button.click()
-
+time.sleep(60)
 #driver.quit()
