@@ -30,8 +30,8 @@ print('Searching for giveaway')
 WebDriverWait(driver, timeout=30)
 first_button = driver.find_element('xpath', "//span[text()='Free Now']")
 first_button.click()
-time.sleep(30)
-add_to_library_button = driver.find_element('xpath', "//div[@_celltype='celltype']")
+time.sleep(60)
+add_to_library_button = driver.find_element('xpath', "//span[text()='Get']")
 
 # add check if button is disabled
 add_to_library_button.click()
