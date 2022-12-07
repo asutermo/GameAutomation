@@ -31,9 +31,15 @@ WebDriverWait(driver, timeout=30)
 first_button = driver.find_element('xpath', "//span[text()='Free Now']")
 first_button.click()
 time.sleep(60)
-add_to_library_button = driver.find_element('xpath', "//span[text()='Get']")
+print('Searching for add to library')
+add_to_library_button = driver.find_element('xpath', "//button[@data-testid='purchase-cta-button']")
 
 # add check if button is disabled
 add_to_library_button.click()
 
-driver.quit()
+time.sleep(60)
+print('Placing Order')
+place_button = driver.find_element('xpath', "//button[@class='payment-btn payment-order-confirm__btn payment-btn--primary']")
+place_button.click()
+
+#driver.quit()
