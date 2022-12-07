@@ -29,12 +29,22 @@ powershell -File .\Automate-Claimer.ps1 -hour 3 -timeOfDay pm -scriptPath .\Game
 
 Using your already logged in Chrome profile, go to GOG and claim the latest giveaway. Not ultra tested but worked on a giveaway.
 
-### Execution 
-
 ```
 python GogGiveawayClaimer.py
 ```
 
+#### EpicGiveawayClaimer.py
+
+Using your already logged in Chrome profile, go to GOG and claim the latest giveaway. Not ultra tested but worked on a giveaway.
+
+
+<span style='color:red'>Please note running this script excessively will trigger captcha</span>
+```
+python EpicGiveawayClaimer.py
+```
+
 ### Follow-ups
 
-Automate adding this as a scheduled task.
+- Automate adding this as a scheduled task.
+- Share common script functionality
+- Check to ensure user logged in
