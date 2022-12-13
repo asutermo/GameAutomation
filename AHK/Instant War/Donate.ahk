@@ -40,8 +40,7 @@ SysGet, Monitor, MonitorPrimary
 WinMove, 0, 0
 Winset, Alwaysontop, , A ; active window will be set as AlwaysOnTop
 
-; Only testing with this resolution, adjustments may be needed to get the right values
-DonateImageSearch() {
+Donate() {
 
     bitmap := "alliance.bmp"
     ImageSearchIW(bitmap, 50)
@@ -63,14 +62,10 @@ DonateImageSearch() {
     ImageSearchIW(bitmap, 25)
 }
 
-
 ^z::
 toggle := !toggle
 if (toggle) {
-    SetTimer, DonateImageSearch, 3600000
+    SetTimer, Donate, 3600000
 } else {
-    SetTimer, DonateImageSearch, Off
+    SetTimer, Donate, Off
 }
-
-
-
