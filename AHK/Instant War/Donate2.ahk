@@ -24,9 +24,6 @@ ActivateIW() {
 }
 
 
-
-
-ActivateIW()
 Sleep, 1000
 
 ResizeWin(Width = 0,Height = 0)
@@ -41,22 +38,26 @@ ResizeWin(Width = 0,Height = 0)
   WinMove,A,,%X%,%Y%,%Width%,%Height%
 }
 
+
+
 Donate()
 {
+    ; Always bring IW to front
+    ActivateIW()
+    Sleep, 10000
+    ResizeWin(1366, 768)
+    WinMove, 0, 0
 
+    ; Could inline this, but done for readability
+    alliance_x := 1258
+    alliance_y := 735 
+    Click %alliance_x%, %alliance_y%
+    Sleep, 1000
 }
 
-Sleep, 10000
-ResizeWin(1366, 768)
-WinMove, 0, 0
+
 
 ^d::
-toggle := !toggle
-if (toggle) {
-    SetTimer, DonateImageSearch, 3600000
-} else {
-    SetTimer, DonateImageSearch, Off
-}
-
+Donate()
 
 
