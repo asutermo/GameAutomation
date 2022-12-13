@@ -21,10 +21,8 @@ ActivateIW() {
             WinActivate, ahk_id %iw_id%
         }
     }
+    Sleep, 10000
 }
-
-
-Sleep, 1000
 
 ResizeWin(Width = 0,Height = 0)
 {
@@ -36,15 +34,13 @@ ResizeWin(Width = 0,Height = 0)
     Height := H
 
   WinMove,A,,%X%,%Y%,%Width%,%Height%
+  Sleep, 10000
 }
-
-
 
 Donate()
 {
     ; Always bring IW to front
     ActivateIW()
-    Sleep, 10000
     ResizeWin(1366, 768)
     WinMove, 0, 0
 
@@ -53,11 +49,20 @@ Donate()
     alliance_y := 735 
     Click %alliance_x%, %alliance_y%
     Sleep, 1000
+
+    tech_x := 420
+    tech_y := 710
+    Click %tech_x%, %tech_y%
+    Sleep, 1000
 }
-
-
 
 ^d::
 Donate()
 
+; toggle := !toggle
+; if (toggle) {
+;     SetTimer, Donate, 3600000
+; } else {
+;     SetTimer, Donate, Off
+; }
 
