@@ -37,12 +37,20 @@ ResizeWin(Width = 0,Height = 0)
   Sleep, 10000
 }
 
+; Remove if you don't want IW to start automatically.
+ActivateIW()
+ResizeWin(1366, 768)
+WinMove, 0, 0
+
 Donate()
 {
     ; Always bring IW to front
     ActivateIW()
     ResizeWin(1366, 768)
     WinMove, 0, 0
+
+    ; Click off any menus
+    Click 1297, 32
 
     ; Could inline this, but done for readability
     alliance_x := 1258
@@ -54,15 +62,21 @@ Donate()
     tech_y := 710
     Click %tech_x%, %tech_y%
     Sleep, 1000
+
+    recommended_tech_x := 238
+    recommended_tech_y := 214
+    Click %recommended_tech_x%, %recommended_tech_y%
+    Sleep, 1000
+
+    contribute_x := 305
+    contribute_y := 360
+    Click %contribute_x% %contribute_y%
+    Sleep, 1000
+
+    ; Click off any menus
+    Click 1297, 32
 }
 
 ^d::
 Donate()
-
-; toggle := !toggle
-; if (toggle) {
-;     SetTimer, Donate, 3600000
-; } else {
-;     SetTimer, Donate, Off
-; }
 
