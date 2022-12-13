@@ -40,7 +40,20 @@ SysGet, Monitor, MonitorPrimary
 WinMove, 0, 0
 Winset, Alwaysontop, , A ; active window will be set as AlwaysOnTop
 
-Donate() {
+ResizeWin(Width = 0,Height = 0)
+{
+  WinGetPos,X,Y,W,H,A
+  If %Width% = 0
+    Width := W
+
+  If %Height% = 0
+    Height := H
+
+  WinMove,A,,%X%,%Y%,%Width%,%Height%
+}
+
+; Only testing with this resolution, adjustments may be needed to get the right values
+DonateImageSearch() {
 
     bitmap := "alliance.bmp"
     ImageSearchIW(bitmap, 50)
@@ -62,11 +75,16 @@ Donate() {
     ImageSearchIW(bitmap, 25)
 }
 
+Sleep, 10000
+ResizeWin(1366, 768)
+
 ^z::
 toggle := !toggle
 if (toggle) {
-    SetTimer, Donate, 3600000
+    SetTimer, DonateImageSearch, 3600000
 } else {
-    SetTimer, Donate, Off
+    SetTimer, DonateImageSearch, Off
 }
+
+
 
