@@ -74,9 +74,22 @@ Donate()
     Sleep, 1000
 
     ; Click off any menus
-    Click 1297, 32
+    Click 29, 11
+    Sleep, 1000
+    Click 29, 11
 }
 
-^d::
-Donate()
+TimeBeforeNextDonate := 1000
 
+!d::Donate()
+^p::Pause
+
+^d::
+Loop
+{
+  Donate()
+  Sleep, %TimeBeforeNextDonate%
+}
+
+
+Escape::ExitApp
