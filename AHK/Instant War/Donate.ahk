@@ -69,4 +69,3 @@ if (toggle) {
 } else {
     SetTimer, Donate, Off
 }
-
