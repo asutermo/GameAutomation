@@ -56,26 +56,26 @@ Donate()
     alliance_x := 1258
     alliance_y := 735 
     Click %alliance_x%, %alliance_y%
-    Sleep, 1000
+    Sleep, 2000
 
     tech_x := 420
     tech_y := 710
     Click %tech_x%, %tech_y%
-    Sleep, 1000
+    Sleep, 2000
 
     recommended_tech_x := 238
     recommended_tech_y := 214
     Click %recommended_tech_x%, %recommended_tech_y%
-    Sleep, 1000
+    Sleep, 2000
 
     contribute_x := 305
     contribute_y := 360
     Click %contribute_x% %contribute_y%
-    Sleep, 1000
+    Sleep, 2000
 
     ; Click off any menus
     Click 29, 11
-    Sleep, 1000
+    Sleep, 2000
     Click 29, 11
 }
 
