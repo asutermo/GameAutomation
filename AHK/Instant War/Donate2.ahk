@@ -48,9 +48,16 @@ Donate()
     ActivateIW()
     ResizeWin(1366, 768)
     WinMove, 0, 0
+    
+    Send {Esc}
 
     ; Click off any menus
     Click 1297, 32
+    Sleep, 1000
+
+    ; Click off annoying p2w menu
+    Click 804, 192
+    Sleep, 1000
 
     ; Could inline this, but done for readability
     alliance_x := 1258
@@ -74,9 +81,9 @@ Donate()
     Sleep, 2000
 
     ; Click off any menus
-    Click 29, 11
-    Sleep, 2000
-    Click 29, 11
+    Send, {Esc}
+    Sleep, 100
+    Send, {Esc}
 }
 
 TimeBeforeNextDonate := 1000
@@ -91,5 +98,4 @@ Loop
   Sleep, %TimeBeforeNextDonate%
 }
 
-
-Escape::ExitApp
+!q::Exit
