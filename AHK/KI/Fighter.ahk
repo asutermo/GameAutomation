@@ -6,14 +6,13 @@ SetWorkingDir, %A_ScriptDir%
 CoordMode, Mouse, Relative  ;sets coordinates based upon active window
 
 Idle() {
-    Send, {Enter}
-    SendInput, {Enter}
-    Sleep, 1000
+    SendInput, {Enter Down}
+    SendInput, {Enter Up}
+    Sleep, 10
 }
 
 Block() {
-    SendInput, {Left}
-    Sleep, 500
+    SendInput, {Left Down}
 }
 
 ^p::Pause
