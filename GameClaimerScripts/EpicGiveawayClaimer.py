@@ -47,4 +47,5 @@ place_button = driver.find_element('xpath', "//*[@id='purchase-app']/div/div/div
 place_button.click()
 time.sleep(60)
 
-driver.quit()
+# usually epic throws up a captcha
+# driver.quit()
