@@ -82,7 +82,7 @@ Donate()
 
     ; Click off any menus
     Send, {Esc}
-    Sleep, 100
+    Sleep, 2000
     Send, {Esc}
 }
 
@@ -98,4 +98,4 @@ Loop
   Sleep, %TimeBeforeNextDonate%
 }
 
-!q::Exit
+!q::ExitApp
