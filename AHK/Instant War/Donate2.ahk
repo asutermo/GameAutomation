@@ -83,7 +83,6 @@ Donate()
     ; Click off any menus
     Send, {Esc}
     Sleep, 2000
-    Send, {Esc}
 }
 
 TimeBeforeNextDonate := 1000
