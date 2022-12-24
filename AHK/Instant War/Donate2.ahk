@@ -49,7 +49,7 @@ Donate()
     ResizeWin(1366, 768)
     WinMove, 0, 0
     
-    Send {Esc}
+    Send, {Esc}
 
     ; Click off any menus
     Click 1297, 32
@@ -83,9 +83,12 @@ Donate()
     ; Click off any menus
     Send, {Esc}
     Sleep, 2000
+
+    Send, {Esc}
+    Sleep, 2000
 }
 
-TimeBeforeNextDonate := 1000
+TimeBeforeNextDonate := 2000
 
 !d::Donate()
 ^p::Pause

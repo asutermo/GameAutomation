@@ -12,7 +12,7 @@ Idle() {
 }
 
 Block() {
-    SendInput, {Left Down}
+    SendInput, {a Down}
 }
 
 ^p::Pause
