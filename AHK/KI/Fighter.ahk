@@ -29,15 +29,38 @@ Block() {
     SendInput, {a Up}
 }
 
-Fight() {
-    ; U, Light Punch
-    ; I, Medium Punch
-    ; O, Heavy Punch
-    ; J, Light Kick
-    ; K, Medium Kick
-    ; L, Heavy Kick
-    ; P, HP+MP+LP
-    ; ;, HK+MK+LK
+; U, Light Punch
+; I, Medium Punch
+; O, Heavy Punch
+; J, Light Kick
+; K, Medium Kick
+; L, Heavy Kick
+; P, HP+MP+LP
+; ;, HK+MK+LK
+
+Rashakuken() {
+    SendInput, {s Down}
+    PreciseSleep(20)
+    SendInput, {s Up}
+    PreciseSleep(20)
+    SendInput, {s Down}
+    SendInput, {d Down}
+    PreciseSleep(20)
+    SendInput, {s Up}
+    SendInput, {d Up}
+    PreciseSleep(20)
+    SendInput, {d Down}
+    PreciseSleep(20)
+    SendInput, {d Up}
+    PreciseSleep(20)
+    SendInput, {i Down}
+    PreciseSleep(20)
+    SendInput, {i Up}
+    PreciseSleep(100)
+}
+
+
+DemonicDespair() {
     SendInput, {s Down}
     PreciseSleep(20)
     SendInput, {s Up}
@@ -53,8 +76,32 @@ Fight() {
     SendInput, {d Up}
     PreciseSleep(20)
     SendInput, {u Down}
+    SendInput, {j Down}
     PreciseSleep(20)
     SendInput, {u Up}
+    SendInput, {j Up}
+    PreciseSleep(20)
+}
+
+BlockadeRunner() {
+    SendInput, {s Down}
+    PreciseSleep(20)
+    SendInput, {s Up}
+    PreciseSleep(20)
+    SendInput, {s Down}
+    SendInput, {d Down}
+    PreciseSleep(20)
+    SendInput, {s Up}
+    SendInput, {d Up}
+    PreciseSleep(20)
+    SendInput, {d Down}
+    PreciseSleep(20)
+    SendInput, {d Up}
+    PreciseSleep(20)
+    SendInput, {j Down}
+    PreciseSleep(20)
+    SendInput, {j Up}
+    PreciseSleep(20)
 }
 
 !q::ExitApp
@@ -70,7 +117,8 @@ Loop
 ^f::
 Loop 
 {
-    Fight()
-    Block()
+    BlockadeRunner()
+    ;Rashakuken()
+    ;DemonicDespair()
 }
 
