@@ -99,6 +99,22 @@ LaserSword() {
     PreciseSleep(20)
 }
 
+; Spinal
+
+; Thunder
+; Sammamish, Call of the Earth, Triplax
+
+; Sabrewulf
+; Ragged Edge. Eclipse, Any Move from Run
+
+; Glacius
+; Hail, Puddle Punch, Cold Shoulder
+
+; Kan-Ra
+; Spike, Swarm, Whirl
+
+; Arbiter
+; Mercy's Demise, Truth Seeker, Prophet's Bane
 
 ; Omen
 Rashakuken() {
