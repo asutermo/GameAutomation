@@ -74,20 +74,24 @@ Opener() {
     PreciseSleep(100)
 }
 
-ShadowLaserSword() {
+LaserSword() {
     SendInput, {s Down}
     PreciseSleep(20)
     SendInput, {s Up}
     PreciseSleep(20)
     SendInput, {s Down}
-    SendInput, {d Down}
+    SendInput, {a Down}
     PreciseSleep(20)
     SendInput, {s Up}
-    SendInput, {d Up}
+    SendInput, {a Up}
     PreciseSleep(20)
     SendInput, {a Down}
     PreciseSleep(20)
     SendInput, {a Up}
+    PreciseSleep(20)
+    SendInput, {u Down}
+    PreciseSleep(20)
+    SendInput, {u Up}
     PreciseSleep(20)
     SendInput, {u Down}
     PreciseSleep(20)
@@ -142,7 +146,7 @@ DemonicDespair() {
     PreciseSleep(20)
 }
 
-; 
+; Orchid
 BlockadeRunner() {
     SendInput, {s Down}
     PreciseSleep(20)
@@ -175,7 +179,7 @@ Loop
 }
 
 ^s::
-ShadowLaserSword()
+LaserSword()
 
 ^t::
 ThrowForward()
