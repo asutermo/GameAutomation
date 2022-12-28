@@ -174,16 +174,9 @@ Loop
     Block()
 }
 
-^f::
+^s::
 ShadowLaserSword()
 
 ^t::
 ThrowForward()
-; Loop 
-; {
-    
-;     ;BlockadeRunner()
-;     ;Rashakuken()
-;     ;DemonicDespair()
-; }
 
