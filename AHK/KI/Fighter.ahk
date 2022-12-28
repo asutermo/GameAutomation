@@ -17,16 +17,14 @@ PreciseSleep(milliseconds)
 
 Idle() {
     SendInput, {Enter Down}
-    ;Sleep, 1000
     PreciseSleep(1000)
     SendInput, {Enter Up}
 }
 
 Block() {
     SendInput, {a Down}
-    ;Sleep, 100
-    ;PreciseSleep(100)
-    ;SendInput, {a Up}
+    PreciseSleep(100)
+    SendInput, {a Up}
 }
 
 ; U, Light Punch
@@ -38,6 +36,67 @@ Block() {
 ; P, HP+MP+LP
 ; ;, HK+MK+LK
 
+Instinct() {
+    SendInput, {o Down}
+    SendInput, {l Down}
+    PreciseSleep(20)
+    SendInput, {o Up}
+    SendInput, {l Up}
+    PreciseSleep(100)   
+}
+
+ThrowForward() {
+    SendInput, {j Down}
+    SendInput, {u Down}
+    PreciseSleep(20)
+    SendInput, {j Up}
+    SendInput, {u Up}
+    PreciseSleep(100)     
+}
+
+ThrowBackward() {
+    SendInput, {a Down}
+    PreciseSleep(20)
+    ThrowForward()
+}
+
+; Jago
+Opener() {
+    SendInput, {d Down}
+    PreciseSleep(20)
+    SendInput, {d Up}   
+    SendInput, {i Down}
+    PreciseSleep(20)
+    SendInput, {i Up}
+    SendInput, {i Down}
+    PreciseSleep(20)
+    SendInput, {i Up}
+    PreciseSleep(100)
+}
+
+ShadowLaserSword() {
+    SendInput, {s Down}
+    PreciseSleep(20)
+    SendInput, {s Up}
+    PreciseSleep(20)
+    SendInput, {s Down}
+    SendInput, {d Down}
+    PreciseSleep(20)
+    SendInput, {s Up}
+    SendInput, {d Up}
+    PreciseSleep(20)
+    SendInput, {a Down}
+    PreciseSleep(20)
+    SendInput, {a Up}
+    PreciseSleep(20)
+    SendInput, {u Down}
+    PreciseSleep(20)
+    SendInput, {u Up}
+    PreciseSleep(20)
+}
+
+
+; Omen
 Rashakuken() {
     SendInput, {s Down}
     PreciseSleep(20)
@@ -83,6 +142,7 @@ DemonicDespair() {
     PreciseSleep(20)
 }
 
+; 
 BlockadeRunner() {
     SendInput, {s Down}
     PreciseSleep(20)
@@ -115,10 +175,15 @@ Loop
 }
 
 ^f::
-Loop 
-{
-    BlockadeRunner()
-    ;Rashakuken()
-    ;DemonicDespair()
-}
+ShadowLaserSword()
+
+^t::
+ThrowForward()
+; Loop 
+; {
+    
+;     ;BlockadeRunner()
+;     ;Rashakuken()
+;     ;DemonicDespair()
+; }
 
