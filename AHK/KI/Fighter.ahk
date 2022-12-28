@@ -25,8 +25,8 @@ Idle() {
 Block() {
     SendInput, {a Down}
     ;Sleep, 100
-    PreciseSleep(100)
-    SendInput, {a Up}
+    ;PreciseSleep(100)
+    ;SendInput, {a Up}
 }
 
 ; U, Light Punch
